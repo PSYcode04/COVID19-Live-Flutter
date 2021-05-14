@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:corona_live_app/pages/login.dart';
+import 'package:corona_live_app/pages/loginSuccess.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,49 +11,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-
-        title: Text(widget.title),
-      ),
-      body: Center(
-
-        child: Column(
-
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Hello',
-            ),
-
-          ],
+        title: '2017313670 ParkSeYeon',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
         ),
-      ),
+        initialRoute: '/',
+        onGenerateRoute: (routerSettings) {
+          switch(routerSettings.name) {
+            case '/':
+              return MaterialPageRoute(builder: (_) => LoginPage(title: "2017313670 ParkSeYeon"));
+            case '/loginSuccess':
+              return MaterialPageRoute(builder: (_) => LoginSuccess(routerSettings.arguments));
+              break;
+            default:
+              return MaterialPageRoute(builder: (_) => LoginPage(title: "2017313670 ParkSeYeon"));
+          }
+        }
     );
   }
 }
+
+
