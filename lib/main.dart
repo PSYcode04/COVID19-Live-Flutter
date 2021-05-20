@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => Login(routerSettings.arguments));
               break;
             case '/navigation':
-              return MaterialPageRoute(builder: (_) => Navigation());
+              return MaterialPageRoute(builder: (_) => Navigation(routerSettings.arguments));
               break;
             default:
               return MaterialPageRoute(builder: (_) => LoginPage(title: "2017313670 ParkSeYeon"));

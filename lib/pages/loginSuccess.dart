@@ -4,6 +4,8 @@ class Login extends StatelessWidget {
   final Map<String, String> arguments;
   Login(this.arguments);
 
+  final String pageName = "Login Page";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +40,13 @@ class Login extends StatelessWidget {
               ElevatedButton(
                   child: Text("Start CORONA LIVE"),
                   onPressed: () {
-                    Navigator.pushNamed(context, '/navigation');
+                    Navigator.pushNamed(
+                        context,
+                        '/navigation',
+                        arguments: {
+                          "user-id" : arguments["user-id"],
+                          "page-name" : pageName,
+                        });
                   },
               ),
             ],
