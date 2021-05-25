@@ -24,7 +24,7 @@ class Navigation extends StatelessWidget {
                 child: ListView(
                   children: <Widget>[
                     ListTile(
-                      leading: Icon(Icons.coronavirus),
+                      leading: Icon(Icons.coronavirus_outlined),
                       title: Text('Cases/Deaths'),
                       onTap: (){
                         Navigator.pushNamed(
