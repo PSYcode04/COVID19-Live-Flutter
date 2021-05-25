@@ -1,33 +1,61 @@
 import 'package:flutter/material.dart';
 
 class CaseDeaths extends StatelessWidget {
+  final Map<String, String> arguments;
+  CaseDeaths(this.arguments);
+
+  final String pageName = "Cases/Deaths Page";
+
   @override
   Widget build(BuildContext context) {
-    final title = 'Basic List';
-
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
-        appBar: AppBar(title: Text(title)),
-        body: ListView(
-          children: <Widget>[
-            ListTile(
-              //leading. 타일 앞에 표시되는 위젯. 참고로 타일 뒤에는 trailing 위젯으로 사용 가능
-              leading: Icon(Icons.map),
-              title: Text('Map'),
-            ),
-            ListTile(
-              leading: Icon(Icons.photo_album),
-              title: Text('Album'),
-            ),
-            ListTile(
-              leading: Icon(Icons.phone),
-              title: Text('Phone'),
-            )
-          ],
+    return WillPopScope(
+      child: Scaffold(
+        body: Center(
+          child: Text("cases"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(
+                context,
+                '/navigation',
+                arguments: {
+                  "user-id" : arguments["user-id"],
+                  "page-name" : pageName,
+                });
+          },
+          tooltip: 'Back',
+          child: Icon(Icons.list),
         ),
       ),
+      onWillPop: () {},
     );
   }
+
+  // @override
+  // Widget build(BuildContext context) {
+  //
+  //   return MaterialApp(
+  //     home: Scaffold(
+  //       body: Center(
+  //         child: Text("cases"),
+  //       ),
+  //       floatingActionButton: FloatingActionButton(
+  //         onPressed: () {
+  //           Navigator.pop(context);
+  //           Navigator.pushNamed(
+  //               context,
+  //               '/navigation',
+  //               arguments: {
+  //                 "user-id" : arguments["user-id"],
+  //                 "page-name" : pageName,
+  //               });
+  //         },
+  //         tooltip: 'Decrement',
+  //         child: Icon(Icons.list),
+  //       ),
+  //     ),
+  //   );
+  // }
 
 }

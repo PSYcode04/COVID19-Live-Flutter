@@ -27,14 +27,24 @@ class Navigation extends StatelessWidget {
                       leading: Icon(Icons.coronavirus),
                       title: Text('Cases/Deaths'),
                       onTap: (){
-                        Navigator.pushNamed(context, '/caseAndDeath');
+                        Navigator.pushNamed(
+                            context,
+                            '/caseAndDeath',
+                            arguments: {
+                              "user-id" : arguments["user-id"],
+                            });
                       },
                     ),
                     ListTile(
                       leading: Icon(Icons.local_hospital),
                       title: Text('Vaccine'),
                       onTap: (){
-                        Navigator.pushNamed(context, '/vaccine');
+                        Navigator.pushNamed(
+                            context,
+                            '/vaccine',
+                            arguments: {
+                              "user-id" : arguments["user-id"],
+                            });
                       },
                     )
                   ],
@@ -66,18 +76,7 @@ class Navigation extends StatelessWidget {
             )
           ],
         ),
-
       ),
-
-      // body: Center(
-      //   child:Column(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: <Widget>[
-      //         Text("Welcome! " + arguments["user-id"]),
-      //         Text("Previous: " + arguments["page-name"]),
-      //       ]
-      //   ),
-      // ),
     );
   }
 }

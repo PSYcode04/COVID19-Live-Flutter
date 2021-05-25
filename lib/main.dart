@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
               return MaterialPageRoute(builder: (_) => Navigation(routerSettings.arguments));
               break;
             case '/caseAndDeath':
-              return MaterialPageRoute(builder: (_) => CaseDeaths());
+              return MaterialPageRoute(builder: (_) => CaseDeaths(routerSettings.arguments));
               break;
             case '/vaccine':
-              return MaterialPageRoute(builder: (_) => Vaccine());
+              return MaterialPageRoute(builder: (_) => Vaccine(routerSettings.arguments));
               break;
             default:
               return MaterialPageRoute(builder: (_) => LoginPage(title: "2017313670 ParkSeYeon"));
