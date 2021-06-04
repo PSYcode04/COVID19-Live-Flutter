@@ -5,9 +5,6 @@ class Navigation extends StatelessWidget {
   Navigation(this.arguments);
   // Receive arguments from onGenerateRouter
 
-  void _click() {
-
-  }
 
   @override
   Widget build(BuildContext context) {
